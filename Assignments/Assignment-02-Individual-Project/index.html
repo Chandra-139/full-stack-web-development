@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FitTrack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-box">FT</div>
+            <span>FitTrack</span>
+        </div>
+
+        <p class="menu-title">MENU</p>
+
+        <button class="menu active" onclick="showPage('dashboard', this)">
+            🏠 Dashboard
+        </button>
+
+        <button class="menu" onclick="showPage('weekly', this)">
+            💪 Weekly Schedule
+        </button>
+
+        <button class="menu" onclick="showPage('calendar', this)">
+            🗓 Calendar
+        </button>
+
+        <button class="menu" onclick="showPage('streak', this)">
+            🔥 Streak
+        </button>
+
+        <p class="menu-title bottom">FITTRACK</p>
+
+        <button class="menu">
+            ⚙ Settings
+        </button>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- HEADER -->
+        <header>
+            <div>
+                <h1 id="pageTitle">Fitness Dashboard</h1>
+                <p id="headerDate"></p>
+            </div>
+
+            <div class="profile">
+                <div class="profile-circle">FT</div>
+                <span>FitTrack User</span>
+            </div>
+        </header>
+
+
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="page">
+
+            <div class="welcome">
+                <div>
+                    <p class="blue-text">WELCOME BACK 👋</p>
+                    <h2>Today's Fitness Dashboard</h2>
+                    <p id="todayDate"></p>
+                </div>
+
+                <div class="streak-small">
+                    🔥 <b id="dashboardStreak">0</b>
+                    Day Streak
+                </div>
+            </div>
+
+
+            <!-- STAT CARDS -->
+            <div class="stats">
+
+                <div class="stat-card">
+                    <div class="stat-icon blue">💪</div>
+                    <div>
+                        <p>Today's Workout</p>
+                        <h2 id="statWorkout">-</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon green">✓</div>
+                    <div>
+                        <p>Completed Tasks</p>
+                        <h2 id="statTasks">0 / 0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon orange">🔥</div>
+                    <div>
+                        <p>Current Streak</p>
+                        <h2 id="statStreak">0 Days</h2>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- WORKOUT CARD -->
+            <div class="section-card workout-section">
+
+                <div class="section-title">
+                    <div>
+                        <p class="blue-text">TODAY'S SCHEDULE</p>
+                        <h2 id="workoutTitle">Workout</h2>
+                    </div>
+
+                    <div class="workout-circle">🏋️</div>
+                </div>
+
+                <p id="workoutDescription"></p>
+
+                <div class="workout-info">
+                    <span>⏱ 45 Minutes</span>
+                    <span>🏋 5 Exercises</span>
+                    <span>🔥 Fitness</span>
+                </div>
+
+                <button class="complete-workout"
+                        onclick="completeWorkout()">
+                    ✓ Complete Today's Workout
+                </button>
+
+            </div>
+
+
+            <!-- TASKS -->
+            <div class="section-card">
+
+                <div class="section-title">
+                    <div>
+                        <p class="blue-text">DAILY TASKS</p>
+                        <h2>Today's Tasks</h2>
+                    </div>
+
+                    <span id="taskCount">0 Tasks</span>
+                </div>
+
+                <div class="add-task">
+                    <input id="todayTask"
+                           type="text"
+                           placeholder="Add a task for today...">
+
+                    <button onclick="addTodayTask()">+ Add Task</button>
+                </div>
+
+                <ul id="todayTaskList"></ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- WEEKLY SCHEDULE -->
+        <section id="weekly" class="page">
+
+            <div class="page-heading">
+                <p class="blue-text">YOUR FITNESS PLAN</p>
+                <h2>Weekly Schedule</h2>
+                <p>Add separate tasks for every day of the week.</p>
+            </div>
+
+            <div id="weeklyList" class="weekly-grid"></div>
+
+        </section>
+
+
+        <!-- CALENDAR -->
+        <section id="calendar" class="page">
+
+            <div class="page-heading">
+                <p class="blue-text">ACTIVITY TRACKER</p>
+                <h2>Workout Calendar</h2>
+                <p>See your completed workout days and maintain your streak.</p>
+            </div>
+
+            <div class="calendar-card">
+
+                <div class="calendar-top">
+
+                    <button onclick="previousMonth()">‹</button>
+
+                    <h2 id="monthYear"></h2>
+
+                    <button onclick="nextMonth()">›</button>
+
+                </div>
+
+                <div class="calendar" id="calendarGrid"></div>
+
+                <div class="calendar-legend">
+                    <span>
+                        <i class="completed-dot"></i>
+                        Workout Completed
+                    </span>
+
+                    <span>
+                        <i class="today-dot"></i>
+                        Today
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STREAK -->
+        <section id="streak" class="page">
+
+            <div class="page-heading">
+                <p class="blue-text">CONSISTENCY</p>
+                <h2>Your Workout Streak</h2>
+                <p>Keep showing up and build your consistency.</p>
+            </div>
+
+            <div class="streak-card">
+
+                <div class="big-fire">🔥</div>
+
+                <h1 id="bigStreak">0</h1>
+
+                <h2>DAY STREAK</h2>
+
+                <p>
+                    Complete your workout every day
+                    to keep your streak alive.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

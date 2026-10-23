@@ -1,0 +1,577 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #14284b;
+}
+
+
+/* APP */
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 240px;
+    min-height: 100vh;
+    background: #12366b;
+    color: white;
+    padding: 25px 18px;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 45px;
+}
+
+.logo-box {
+    background: #2f6df6;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+}
+
+.menu-title {
+    color: #8da5c9;
+    font-size: 11px;
+    margin: 20px 10px 10px;
+    font-weight: bold;
+}
+
+.menu-title.bottom {
+    margin-top: 50px;
+}
+
+.menu {
+    width: 100%;
+    padding: 14px;
+    margin: 4px 0;
+    border: none;
+    border-radius: 9px;
+    background: transparent;
+    color: #dbe6f8;
+    text-align: left;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.menu:hover,
+.menu.active {
+    background: #2f6df6;
+    color: white;
+}
+
+
+/* MAIN */
+
+.main {
+    margin-left: 240px;
+    width: calc(100% - 240px);
+}
+
+
+/* HEADER */
+
+header {
+    height: 82px;
+    background: white;
+    border-bottom: 1px solid #e3e8f0;
+    padding: 0 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 22px;
+    margin: 0;
+}
+
+header p {
+    color: #8994a6;
+    margin: 5px 0 0;
+    font-size: 13px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #53647c;
+    font-size: 14px;
+}
+
+.profile-circle {
+    width: 38px;
+    height: 38px;
+    background: #dce9ff;
+    color: #2462d8;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+
+/* PAGE */
+
+.page {
+    display: none;
+    padding: 30px 35px;
+}
+
+#dashboard {
+    display: block;
+}
+
+
+/* WELCOME */
+
+.welcome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.welcome h2 {
+    margin: 5px 0;
+    font-size: 27px;
+}
+
+.welcome p {
+    color: #7d899b;
+}
+
+.blue-text {
+    color: #2f6df6 !important;
+    font-size: 11px !important;
+    font-weight: bold;
+    letter-spacing: .5px;
+}
+
+.streak-small {
+    background: #fff7e5;
+    color: #e58a00;
+    padding: 14px 18px;
+    border-radius: 9px;
+}
+
+
+/* STAT CARDS */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.stat-card {
+    background: white;
+    border: 1px solid #e1e7f0;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+
+.stat-card p {
+    margin: 0 0 7px;
+    color: #728098;
+    font-size: 13px;
+}
+
+.stat-card h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.stat-icon.blue {
+    background: #e2edff;
+}
+
+.stat-icon.green {
+    background: #dcf8e8;
+}
+
+.stat-icon.orange {
+    background: #fff0cc;
+}
+
+
+/* CARDS */
+
+.section-card {
+    background: white;
+    border: 1px solid #e1e7f0;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 22px;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-title h2 {
+    margin: 5px 0 0;
+}
+
+.section-title > span {
+    color: #8994a6;
+    font-size: 13px;
+}
+
+
+/* WORKOUT */
+
+.workout-section {
+    background: #ffffff;
+}
+
+.workout-section > p {
+    color: #718096;
+}
+
+.workout-circle {
+    width: 65px;
+    height: 65px;
+    background: #e7efff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+}
+
+.workout-info {
+    display: flex;
+    gap: 25px;
+    color: #718096;
+    font-size: 13px;
+    margin: 20px 0;
+}
+
+.complete-workout {
+    background: #2f6df6;
+    color: white;
+    border: none;
+    padding: 11px 18px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.complete-workout:hover {
+    background: #2458ce;
+}
+
+
+/* TASKS */
+
+.add-task {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #dce2eb;
+    border-radius: 7px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #2f6df6;
+}
+
+.add-task button,
+.add-button {
+    background: #2f6df6;
+    color: white;
+    border: none;
+    padding: 12px 17px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    padding: 13px;
+    margin: 8px 0;
+    background: #f6f8fb;
+    border: 1px solid #e7ebf1;
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-buttons button {
+    border: none;
+    padding: 6px 9px;
+    border-radius: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.complete {
+    background: #25b864;
+    color: white;
+}
+
+.delete {
+    background: #ef5350;
+    color: white;
+}
+
+
+/* PAGE HEADING */
+
+.page-heading {
+    margin-bottom: 25px;
+}
+
+.page-heading h2 {
+    margin: 5px 0;
+    font-size: 28px;
+}
+
+.page-heading p:last-child {
+    color: #7d899b;
+}
+
+
+/* WEEKLY */
+
+.weekly-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.week-card {
+    background: white;
+    border: 1px solid #e1e7f0;
+    border-radius: 12px;
+    padding: 22px;
+}
+
+.week-card h3 {
+    margin: 0;
+    color: #14284b;
+}
+
+.week-card .workout-name {
+    color: #2f6df6;
+    font-size: 14px;
+    margin: 8px 0 18px;
+}
+
+.week-card .add-task {
+    margin-bottom: 5px;
+}
+
+.week-card input {
+    width: 65%;
+}
+
+.week-card ul {
+    margin-top: 12px;
+}
+
+
+/* CALENDAR */
+
+.calendar-card {
+    background: white;
+    border: 1px solid #e1e7f0;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.calendar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calendar-top button {
+    border: none;
+    background: #eaf0fb;
+    color: #2f6df6;
+    font-size: 25px;
+    width: 40px;
+    height: 40px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 7px;
+    margin-top: 20px;
+}
+
+.calendar div {
+    min-height: 55px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 7px;
+    background: #f6f8fb;
+    color: #53647c;
+}
+
+.calendar .completed {
+    background: #d8f5e3;
+    color: #17964d;
+    font-weight: bold;
+}
+
+.calendar .today-date {
+    border: 2px solid #2f6df6;
+}
+
+.calendar-legend {
+    display: flex;
+    gap: 25px;
+    margin-top: 20px;
+    color: #758197;
+    font-size: 13px;
+}
+
+.completed-dot,
+.today-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.completed-dot {
+    background: #25b864;
+}
+
+.today-dot {
+    background: #2f6df6;
+}
+
+
+/* STREAK */
+
+.streak-card {
+    max-width: 550px;
+    background: white;
+    border: 1px solid #e1e7f0;
+    border-radius: 15px;
+    padding: 50px;
+    text-align: center;
+    margin: 30px auto;
+}
+
+.big-fire {
+    font-size: 60px;
+}
+
+.streak-card h1 {
+    font-size: 75px;
+    color: #2f6df6;
+    margin: 10px;
+}
+
+.streak-card h2 {
+    margin: 0;
+}
+
+.streak-card p {
+    color: #7d899b;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .sidebar {
+        width: 70px;
+        padding: 20px 10px;
+    }
+
+    .logo span,
+    .menu-title {
+        display: none;
+    }
+
+    .menu {
+        text-align: center;
+        font-size: 0;
+    }
+
+    .main {
+        margin-left: 70px;
+        width: calc(100% - 70px);
+    }
+
+    header {
+        padding: 0 20px;
+    }
+
+    .profile span {
+        display: none;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .weekly-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
